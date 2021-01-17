@@ -36,18 +36,15 @@ export class SupplierService {
     //   // outer subscriptio
     //   (o) => o.subscribe((item) => console.log('map result', item)) // inner subscription
     // );
-
-    this.suppliersWithConcatMap$.subscribe((item) =>
-      console.log('concatMap result', item)
-    );
-
-    this.suppliersWithMergeMap$.subscribe((item) =>
-      console.log('mergeMap result', item)
-    );
-
-    this.suppliersWithSwitchMap$.subscribe((item) =>
-      console.log('switchMap result', item)
-    );
+    // this.suppliersWithConcatMap$.subscribe((item) =>
+    //   console.log('concatMap result', item)
+    // );
+    // this.suppliersWithMergeMap$.subscribe((item) =>
+    //   console.log('mergeMap result', item)
+    // );
+    // this.suppliersWithSwitchMap$.subscribe((item) =>
+    //   console.log('switchMap result', item)
+    // );
   }
 
   private handleError(err: any): Observable<never> {
