@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { combineLatest, Observable, throwError } from 'rxjs';
+import { combineLatest, Observable, pipe, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Product } from './product';
@@ -36,6 +36,11 @@ export class ProductService {
           } as Product)
       )
     )
+  );
+
+  selectedProduct$ = this.productsWithCategory$.pipe(
+    map((products) => products.find((product) => product.id === 5)),
+    tap((product) => console.log('selectedProduct', product))
   );
 
   constructor(
